@@ -18,6 +18,7 @@ public class Pferderennen {
         // TODO code application logic here
         System.out.println("Willkommen");
         System.out.println("Willkommen");
+        System.out.println("Willkommen");
         
     }
     
