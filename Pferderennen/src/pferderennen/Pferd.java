@@ -9,6 +9,6 @@ package pferderennen;
  *
  * @author Hisho
  */
-public class Player {
+public class Pferd {
     
 }
