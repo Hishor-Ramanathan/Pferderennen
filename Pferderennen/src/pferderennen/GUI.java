@@ -9,16 +9,6 @@ package pferderennen;
  *
  * @author Hisho
  */
-public class Starter {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
-        GUI start = new GUI();
-        
-    }
+public class GUI {
     
 }
