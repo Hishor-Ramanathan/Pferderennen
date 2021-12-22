@@ -19,6 +19,7 @@ public class Pferderennen {
         System.out.println("Willkommen");
         System.out.println("Willkommen");
         System.out.println("Willkommen");
+        System.out.println("Willkommen");
         
     }
     
