@@ -16,10 +16,7 @@ public class Pferderennen {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Willkommen");
-        System.out.println("Willkommen");
-        System.out.println("Willkommen");
-        System.out.println("Willkommen");
+     
         
     }
     
