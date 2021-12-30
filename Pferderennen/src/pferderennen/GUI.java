@@ -15,8 +15,8 @@ public class GUI {
 
     public void startePferderennen() {
         boolean askfor = false;
-        int anzahlpferde=0;
-        int strecke=0;
+        int anzahlpferde = 0;
+        int strecke = 0;
         do {
 
             String eingabe = JOptionPane.showInputDialog(null, "Geben Sie bitte die Anzahl der Pferde ein.",
@@ -29,8 +29,8 @@ public class GUI {
                 askfor = true;
             }
         } while (askfor);
-        
-          do {
+
+        do {
 
             String eingabe = JOptionPane.showInputDialog(null, "Geben Sie bitte die Länge der Streck ein.",
                     "Pferderennen",
