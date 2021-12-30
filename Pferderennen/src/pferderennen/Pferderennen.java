@@ -12,10 +12,40 @@ import java.util.ArrayList;
  * @author Hisho
  */
 public class Pferderennen {
+    private int streckenLaenge;
     ArrayList<Pferd> Pferde = new ArrayList<>();
+    
+    public Pferderennen(int streckenLaenge, int anzahlPferde) {
+        this.streckenLaenge = streckenLaenge;
+        for (int i = 0; i < anzahlPferde; i++) {
+            Pferde.add(new Pferd("Pferd "+i, i));
+        }
+    }
+    
+    private String gerannteStreckeAlsBalken(Pferd pferd){
+        
+        return "";
+    }
+    
+    public void lassPferdeRennen(){
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
     public void createPferde(){
         for (Pferd pferd : Pferde) {
-            ee
+      
         }
     }
 }

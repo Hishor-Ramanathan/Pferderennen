@@ -23,4 +23,14 @@ public class Pferd {
     public void rennen(){
         
     }
+
+    public int getGerannteStrecke() {
+        return gerannteStrecke;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

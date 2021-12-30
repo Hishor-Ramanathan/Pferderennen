@@ -5,10 +5,43 @@
  */
 package pferderennen;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hisho
  */
 public class GUI {
-    
+
+    public void startePferderennen() {
+        boolean askfor = false;
+        int anzahlpferde=0;
+        int strecke=0;
+        do {
+
+            String eingabe = JOptionPane.showInputDialog(null, "Geben Sie bitte die Anzahl der Pferde ein.",
+                    "Pferderennen",
+                    JOptionPane.PLAIN_MESSAGE);
+            askfor = false;
+            try {
+                anzahlpferde = Integer.parseInt(eingabe);
+            } catch (Exception e) {
+                askfor = true;
+            }
+        } while (askfor);
+        
+          do {
+
+            String eingabe = JOptionPane.showInputDialog(null, "Geben Sie bitte die Länge der Streck ein.",
+                    "Pferderennen",
+                    JOptionPane.PLAIN_MESSAGE);
+            askfor = false;
+            try {
+                strecke = Integer.parseInt(eingabe);
+            } catch (Exception e) {
+                askfor = true;
+            }
+        } while (askfor);
+        Pferderennen eingabe = new Pferderennen(strecke, anzahlpferde);
+    }
 }
