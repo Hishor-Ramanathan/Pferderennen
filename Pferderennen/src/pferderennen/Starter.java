@@ -18,6 +18,7 @@ public class Starter {
         // TODO code application logic here
         
         GUI start = new GUI();
+        start.startePferderennen();
         
     }
     
