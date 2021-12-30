@@ -5,10 +5,17 @@
  */
 package pferderennen;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Hisho
  */
 public class Pferderennen {
-    
+    ArrayList<Pferd> Pferde = new ArrayList<>();
+    public void createPferde(){
+        for (Pferd pferd : Pferde) {
+            
+        }
+    }
 }
