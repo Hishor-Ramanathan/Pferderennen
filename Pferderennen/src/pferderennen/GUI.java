@@ -43,5 +43,7 @@ public class GUI {
             }
         } while (askfor);
         Pferderennen eingabe = new Pferderennen(strecke, anzahlpferde);
+        eingabe.lassPferdeRennen();
+        System.out.println(eingabe.getRangliste());
     }
 }

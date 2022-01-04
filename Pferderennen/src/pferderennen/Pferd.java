@@ -5,6 +5,8 @@
  */
 package pferderennen;
 
+import java.util.Random;
+
 /**
  *
  * @author Hisho
@@ -21,7 +23,10 @@ public class Pferd {
 
     }
     public void rennen(){
-        
+          Random rand = new Random();
+      int upperbound = 11;
+      int int_random = rand.nextInt(upperbound); 
+      gerannteStrecke += int_random;
     }
 
     public int getGerannteStrecke() {
@@ -30,7 +35,7 @@ public class Pferd {
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Pferd "+name +", Startnummer "+startnummer+": ";
     }
     
 }
