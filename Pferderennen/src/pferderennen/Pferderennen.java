@@ -93,12 +93,13 @@ public class Pferderennen {
 
     public String getRangliste() {
         String rangliste = "";
-        int rang = 1;
+        
         ArrayList<Pferd> Rangliste = new ArrayList<>(
                 new HashSet<>(RanglisteMitDuplikate));
+        int rang = Rangliste.size();
         for (Pferd pferd : Rangliste) {
             rangliste += rang + ". Rang: " + pferd.toString() + "\n";
-            rang++;
+            rang--;
 
         }
         return rangliste;
