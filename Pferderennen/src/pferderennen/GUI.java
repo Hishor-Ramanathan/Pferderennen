@@ -24,6 +24,9 @@ public class GUI {
                     JOptionPane.PLAIN_MESSAGE);
             askfor = false;
             try {
+                if(eingabe==null) {
+                    System.exit(0);
+                }
                 anzahlpferde = Integer.parseInt(eingabe);
             } catch (Exception e) {
                 askfor = true;
@@ -37,7 +40,11 @@ public class GUI {
                     JOptionPane.PLAIN_MESSAGE);
             askfor = false;
             try {
+                 if(eingabe==null) {
+                    System.exit(0);
+                }
                 strecke = Integer.parseInt(eingabe);
+               
             } catch (Exception e) {
                 askfor = true;
             }
