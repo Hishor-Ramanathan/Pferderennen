@@ -16,7 +16,7 @@ public class Pferderennen {
 
     private int streckenLaenge;
     ArrayList<Pferd> Pferde = new ArrayList<>();
-    ArrayList<Pferd> RanglisteMitDuplikate = new ArrayList<>();
+    ArrayList<Pferd> Rangliste = new ArrayList<>();
 
     public Pferderennen(int streckenLaenge, int anzahlPferde) {
         this.streckenLaenge = streckenLaenge;
@@ -26,7 +26,6 @@ public class Pferderennen {
     }
 
     private String gerannteStreckeAlsBalken(Pferd pferd) {
-
         String balken = "|";
         double x = getStreckenLaenge() / 20;
         int stern = (int) (pferd.getGerannteStrecke() / x);
@@ -45,16 +44,16 @@ public class Pferderennen {
     }
 
     public void lassPferdeRennen() {
-        int rang = 1;
         while (rennenZuEnde()) {
             System.out.println(getStand());
             for (Pferd pferd : Pferde) {
+                pferd.rennen();
                 if (pferd.getGerannteStrecke() >= getStreckenLaenge()) {
-                    RanglisteMitDuplikate.add(pferd);
-                } else {
-                    pferd.rennen();
+                    if (!pferd.getAufrangliste()) {
+                        pferd.setAufrangliste(true);
+                        Rangliste.add(pferd);
+                    }
                 }
-
             }
             try {
                 Thread.sleep(1000);
@@ -63,20 +62,13 @@ public class Pferderennen {
             }
 
         }
-        for (Pferd pferd : Pferde) {
-                if (pferd.getGerannteStrecke() >= getStreckenLaenge()) {
-                    RanglisteMitDuplikate.add(pferd);
-                } 
-        }
-        System.out.println(getStand());
     }
 
     public boolean rennenZuEnde() {
         boolean rennenzuende = false;
         for (Pferd pferd : Pferde) {
             if (pferd.getGerannteStrecke() < getStreckenLaenge()) {
-                rennenzuende = true;
-                break;
+                return true;
             }
         }
         return rennenzuende;
@@ -90,22 +82,19 @@ public class Pferderennen {
 
         return stand;
     }
-
+    public ArrayList<Pferd> getRanglisteArrayList(){
+        return Rangliste;
+    }
     public String getRangliste() {
         String rangliste = "";
-        
-        ArrayList<Pferd> Rangliste = new ArrayList<>(
-                new HashSet<>(RanglisteMitDuplikate));
         int rang = Rangliste.size();
-        int pferd= Rangliste.size()-1;
-        for (int i = 1; i < rang+1; i++) {
-            
-        
- 
+
+        for (int i = 1; i < rang + 1; i++) {
+
             rangliste += i + ". Rang: " + Rangliste.get(--i).toString() + "\n";
-            --pferd;
+
             ++i;
-            
+
         }
         return rangliste;
     }
@@ -113,5 +102,6 @@ public class Pferderennen {
     public int getStreckenLaenge() {
         return streckenLaenge;
     }
-
+    
+    
 }
