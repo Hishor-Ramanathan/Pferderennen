@@ -5,14 +5,10 @@
  */
 package pferderennen;
 
-import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 
 /**
  *
@@ -97,9 +93,9 @@ public class GUI {
 
     public Wetten askWette(int guthaben) {
         List<Integer> wette = new ArrayList<>();
-        boolean askfor = false;
+        boolean askfor = true;
 
-        askfor = false;
+      
         JTextField einsatz = new JTextField();
         JTextField index1 = new JTextField();
         JTextField index2 = new JTextField();
@@ -108,8 +104,8 @@ public class GUI {
             try {
                 Object[] message = {"Einsatz (" + guthaben + " verfügbar)", einsatz,
                     "Pferdstartnummer", index1,
-                    "Pferdstartnumme", index2,
-                    "Pferdstartnummer", index3};
+                    "Pferdstartnumme (optional)", index2,
+                    "Pferdstartnummer (optional)", index3};
                 JOptionPane pane = new JOptionPane(message,
                         JOptionPane.PLAIN_MESSAGE,
                         JOptionPane.OK_CANCEL_OPTION);
@@ -117,8 +113,8 @@ public class GUI {
             } catch (Exception e) {
                 askfor = true;
             }
-            if (guthaben >= Integer.parseInt(einsatz.getText())) {
-                askfor = true;
+            if (guthaben >= Integer.parseInt(einsatz.getText()) || index1.getText() == null) {
+                askfor = false;
             }
         } while (askfor);
         if (index3.getText() != null) {
@@ -128,8 +124,7 @@ public class GUI {
         } else if (index1.getText() != null) {
             return new Wetten(Integer.parseInt(einsatz.getText()), new Pferd("Pferd " + index1.getText(), 0));
         }
-        return null;
-
+        return null; 
     }
 
     public void ergebnisWette(int x) {

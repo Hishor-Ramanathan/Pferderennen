@@ -27,7 +27,7 @@ public class Pferd {
     public String getName() {
         return name;
     }
-    
+
     public void rennen() {
         Random rand = new Random();
         int upperbound = 11;

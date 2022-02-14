@@ -18,16 +18,16 @@ public class Spielverlauf {
         // TODO code application logic here
         GUI gui = new GUI();
         Guthaben guthaben = new Guthaben(gui.askGuthaben());
-        
-      do{
-        Pferderennen pferderennen = gui.GUIPferderennen();
-        System.out.println(pferderennen.getStand());
-        Wetten wetten = gui.askWette(guthaben.getGuthaben());
-        pferderennen.lassPferdeRennen();
-        System.out.println(pferderennen.getRangliste());
-        guthaben.addGuthaben(wetten.checkWette(pferderennen.getRanglisteArrayList()));
-        gui.ergebnisWette(guthaben.getGuthaben());
-      }while(gui.weiterspielen());
+
+        do {
+            Pferderennen pferderennen = gui.GUIPferderennen();
+            System.out.println(pferderennen.getStand());
+            Wetten wetten = gui.askWette(guthaben.getGuthaben());
+            pferderennen.lassPferdeRennen();
+            System.out.println(pferderennen.getRangliste());
+            guthaben.addGuthaben(wetten.checkWette(pferderennen.getRanglisteArrayList()));
+            gui.ergebnisWette(guthaben.getGuthaben());
+        } while (gui.weiterspielen());
     }
-   
+
 }

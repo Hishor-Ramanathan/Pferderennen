@@ -10,12 +10,13 @@ package pferderennen;
  * @author Hisho
  */
 public class Guthaben {
+
     private int guthaben;
 
     public Guthaben(int guthaben) {
         this.guthaben = guthaben;
     }
-    
+
     public void addGuthaben(int guthaben) {
         this.guthaben += guthaben;
     }

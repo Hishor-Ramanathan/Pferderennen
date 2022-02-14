@@ -42,7 +42,7 @@ public class Wetten {
     public int checkWette(ArrayList<Pferd> pferde){
         if(pferd3!=null){
              if(pferde.get(0).getName().equals(pferd1.getName())||pferd2.getName().equals(pferde.get(0).getName())||pferde.get(0).equals(pferd3.getName())){
-               return einsatz*6;
+               return einsatz*4;
             }
         }else if(pferd2!=null){
             if(pferde.get(0).getName().equals(pferd1.getName())||pferd2.getName().equals(pferde.get(0).getName())){

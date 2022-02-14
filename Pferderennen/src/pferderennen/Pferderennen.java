@@ -82,9 +82,11 @@ public class Pferderennen {
 
         return stand;
     }
-    public ArrayList<Pferd> getRanglisteArrayList(){
+
+    public ArrayList<Pferd> getRanglisteArrayList() {
         return Rangliste;
     }
+
     public String getRangliste() {
         String rangliste = "";
         int rang = Rangliste.size();
@@ -102,6 +104,5 @@ public class Pferderennen {
     public int getStreckenLaenge() {
         return streckenLaenge;
     }
-    
-    
+
 }
