@@ -95,7 +95,6 @@ public class GUI {
         List<Integer> wette = new ArrayList<>();
         boolean askfor = true;
 
-      
         JTextField einsatz = new JTextField();
         JTextField index1 = new JTextField();
         JTextField index2 = new JTextField();
@@ -124,7 +123,7 @@ public class GUI {
         } else if (index1.getText() != null) {
             return new Wetten(Integer.parseInt(einsatz.getText()), new Pferd("Pferd " + index1.getText(), 0));
         }
-        return null; 
+        return null;
     }
 
     public void ergebnisWette(int x) {
