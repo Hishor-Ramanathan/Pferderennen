@@ -58,7 +58,7 @@ public class Pferderennen {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-               
+
             }
 
         }
